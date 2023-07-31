@@ -644,212 +644,221 @@ starting version 237
 [ 2395.498737]  schedule+0x2c/0x80
 [ 2395.513890]  tick_sched_timer+0x39/0x80
 [ 2395.526361]  schedule_timeout+0x15d/0x370
-[ 2395.539621]  __hrtimer_run_queues+0xdf/0x230
-[ 2395.554570]  ? __next_timer_interrupt+0xe0/0xe0
-[ 2395.566752]  hrtimer_interrupt+0x97/0x180
-[ 2395.580388]  rcu_gp_kthread+0x53a/0x980
-[ 2395.592205]  smp_apic_timer_interrupt+0x6f/0x140
-[ 2395.603291]  kthread+0x121/0x140
-[ 2395.615440]  apic_timer_interrupt+0x90/0xa0
-[ 2395.626976]  ? rcu_note_context_switch+0x150/0x150
-[ 2395.639048]  </IRQ>
-[ 2395.652148]  ? kthread_create_worker_on_cpu+0x70/0x70
-[ 2395.664700] RIP: 0010:do_xor_speed+0x4f/0xc9 [xor]
-[ 2395.676725]  ret_from_fork+0x1f/0x40
-[ 2395.688137] RSP: 0018:ffff98a3803cfc08 EFLAGS: 00010246 ORIG_RAX: ffffffffffffff11
-[ 2396.908249] RAX: 0000000000000000 RBX: 000000000000482a RCX: ffff8b7a39bf4140
-[ 2396.922977] RDX: 00000000fffedfef RSI: ffff8b7a360b5000 RDI: ffff8b7a39bf5500
-[ 2396.934800] RBP: ffff98a3803cfc40 R08: ffffffffc050c680 R09: 0000000000aaaaaa
-[ 2396.946253] R10: 0000000000000001 R11: 00000000ffffffff R12: ffffffffc050f080
-[ 2396.958356] R13: 000000000000482a R14: 0000000000000004 R15: 00000000fffedfef
-[ 2396.970305]  ? xor_sse_3_pf64+0x260/0x260 [xor]
-[ 2396.981101]  ? do_xor_speed+0x7d/0xc9 [xor]
-[ 2396.996325]  calibrate_xor_blocks+0xc3/0xf37 [xor]
-[ 2397.006908]  ? do_xor_speed+0xc9/0xc9 [xor]
-[ 2397.018106]  do_one_initcall+0x52/0x1b0
-[ 2397.030169]  ? _cond_resched+0x19/0x40
-[ 2397.040510]  ? kmem_cache_alloc_trace+0x167/0x1d0
-[ 2397.052053]  ? do_init_module+0x27/0x1f2
-[ 2397.062995]  do_init_module+0x4f/0x1f2
-[ 2397.072437]  load_module+0x1aa7/0x1fd0
-[ 2397.081978]  ? ima_post_read_file+0x96/0xa0
-[ 2397.092123]  SYSC_finit_module+0xfc/0x120
-[ 2397.104493]  ? SYSC_finit_module+0xfc/0x120
-[ 2397.114733]  SyS_finit_module+0xe/0x10
-[ 2397.126318]  do_syscall_64+0x73/0x130
-[ 2397.135701]  entry_SYSCALL_64_after_hwframe+0x59/0xbe
-[ 2397.146178] RIP: 0033:0x7f5b87210539
-[ 2397.157017] RSP: 002b:00007ffcee311d28 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
-[ 2397.169870] RAX: ffffffffffffffda RBX: 0000556162062620 RCX: 00007f5b87210539
-[ 2397.182617] RDX: 0000000000000000 RSI: 0000556160d49cee RDI: 0000000000000005
-[ 2397.194970] RBP: 0000556160d49cee R08: 0000000000000000 R09: 0000556162061d20
-[ 2397.206395] R10: 0000000000000005 R11: 0000000000000246 R12: 0000000000000000
-[ 2397.218383] R13: 00005561620695f0 R14: 0000000000060000 R15: 0000556162061d20
-[ 2397.331984]    prefetch64-sse: 144717.000 MB/sec
-[ 2397.445613]    generic_sse: 49048.000 MB/sec
-[ 2397.457433] xor: using function: prefetch64-sse (144717.000 MB/sec)
-[ 2397.477516] async_tx: api initialized (async)
-done.
-Begin: Running /scripts/init-premount ... done.
-Begin: Mounting root file system ... Begin: Running /scripts/local-top ... done.
-Begin: Running /scripts/local-premount ... [ 2397.564931] Btrfs loaded, crc32c=crc32c-intel
-Scanning for Btrfs filesystems
-done.
-Begin: Will now check root file system ... fsck from util-linux 2.31.1
-[/sbin/fsck.ext4 (1) -- /dev/sda1] fsck.ext4 -a -C0 /dev/sda1 
-cloudimg-rootfs: clean, 74903/5120000 files, 874563/10485499 blocks
-done.
-[ 2397.647360] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
-done.
-Begin: Running /scripts/local-bottom ... done.
-Begin: Running /scripts/init-bottom ... done.
-[ 2397.962409] ip_tables: (C) 2000-2006 Netfilter Core Team
-[ 2397.992685] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
-[ 2398.034565] systemd[1]: Detected virtualization oracle.
-[ 2398.047334] systemd[1]: Detected architecture x86-64.
-
-Welcome to [1mUbuntu 18.04.6 LTS[0m!
-
-[ 2398.088053] systemd[1]: Set hostname to <node01>.
-[ 2398.549379] systemd[1]: Reached target System Time Synchronized.
-[[0;32m  OK  [0m] Reached target System Time Synchronized.
-[ 2398.576603] systemd[1]: Created slice System Slice.
-[[0;32m  OK  [0m] Created slice System Slice.
-[ 2398.591370] systemd[1]: Listening on Device-mapper event daemon FIFOs.
-[[0;32m  OK  [0m] Listening on Device-mapper event daemon FIFOs.
-[ 2398.608468] systemd[1]: Listening on LVM2 poll daemon socket.
-[[0;32m  OK  [0m] Listening on LVM2 poll daemon socket.
-[ 2398.637260] systemd[1]: Listening on Journal Socket.
-[[0;32m  OK  [0m] Listening on Journal Socket.
-[ 2398.670844] systemd[1]: Mounting POSIX Message Queue File System...
-         Mounting POSIX Message Queue File System...
-         Starting Create list of required st…ce nodes for the current kernel...
-         Mounting Kernel Debug File System...
-[[0;32m  OK  [0m] Listening on Syslog Socket.
-[[0;32m  OK  [0m] Listening on Journal Audit Socket.
-[[0;32m  OK  [0m] Reached target Swap.
-[[0;32m  OK  [0m] Listening on Journal Socket (/dev/log).
-         Starting Load Kernel Modules...
-[[0;32m  OK  [0m] Set up automount Arbitrary Executab…rmats File System Automount Point.
-[[0;32m  OK  [0m] Reached target User and Group Name Lookups.
-         Starting Set the console keyboard layout...
-         Mounting Huge Pages File System...
-[[0;32m  OK  [0m] Listening on LVM2 metadata daemon socket.
-[[0;32m  OK  [0m] Listening on Network Service Netlink Socket.
-[ 2398.759674] Loading iSCSI transport class v2.0-870.
-[[0;32m  OK  [0m] Listening on udev Kernel Socket.
-[ 2398.801546] iscsi: registered transport (tcp)
-         Starting Journal Service...
-[[0;32m  OK  [0m] Listening on udev Control Socket.
-         Starting Monitoring of LVM2 mirrors…ng dmeventd or progress polling...
-[[0;32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
-         Starting udev Coldplug all Devices...
-[[0;32m  OK  [0m] Created slice User and Session Slice.
-[[0;32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
-[[0;32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
-[[0;32m  OK  [0m] Listening on fsck to fsckd communication Socket.
-         Starting Remount Root and Kernel File Systems...
-[[0;32m  OK  [0m] Reached target Mounting snaps.
-[[0;32m  OK  [0m] Reached target Mounted snaps.
-         Starting Uncomplicated firewall...
-[[0;32m  OK  [0m] Reached target Slices.
-[[0;32m  OK  [0m] Mounted POSIX Message Queue File System.
-[[0;32m  OK  [0m] Started Create list of required sta…vice nodes for the current kernel.
-[[0;32m  OK  [0m] Mounted Kernel Debug File System.
-[[0;32m  OK  [0m] Mounted Huge Pages File System.
-         Starting Create Static Device Nodes in /dev...
-[[0;32m  OK  [0m] Started Uncomplicated firewall.
-[[0;32m  OK  [0m] Started LVM2 metadata daemon.
-[[0;32m  OK  [0m] Started Journal Service.[ 2399.047848] EXT4-fs (sda1): re-mounted. Opts: (null)
-
-[[0;32m  OK  [0m] Started Remount Root and Kernel File Systems.
-         Starting Flush Journal to Persistent Storage...
-         Starting Load/Save Random Seed...
-[[0;32m  OK  [0m] Started udev Coldplug all Devices.
-[[0;32m  OK  [0m] Started Create Static Device Nodes in /dev.
-         Starting udev Kernel Device Manager...
-[ 2399.158198] systemd-journald[412]: Received request to flush runtime journal from PID 1
-[[0;32m  OK  [0m[ 2399.176972] iscsi: registered transport (iser)
-] Started Set the console keyboard layout.
-[[0;32m  OK  [0m] Started Load/Save Random Seed.
-[[0;32m  OK  [0m] Started Load Kernel Modules.
-         Mounting Kernel Configuration File System...
-         Starting Apply Kernel Variables...
-         Mounting FUSE Control File System...
-[[0;32m  OK  [0m] Started Monitoring of LVM2 mirrors,…sing dmeventd or progress polling.
-[[0;32m  OK  [0m] Mounted Kernel Configuration File System.
-[[0;32m  OK  [0m] Mounted FUSE Control File System.
-[[0;32m  OK  [0m] Reached target Local File Systems (Pre).
-[[0;32m  OK  [0m] Reached target Local File Systems.
-         Starting ebtables ruleset management...
-         Starting Set console font and keymap...
-         Starting AppArmor initialization...
-         Starting Tell Plymouth To Write Out Runtime Data...
-[[0;32m  OK  [0m] Started udev Kernel Device Manager.
-[[0;32m  OK  [0m] Started Dispatch Password Requests to Console Directory Watch.
-[[0;32m  OK  [0m] Reached target Local Encrypted Volumes.
-[[0;32m  OK  [0m] Started Set console font and keymap.
-[[0;32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
-[[0;32m  OK  [0m] Started Apply Kernel Variables.
-[[0;32m  OK  [0m] Started Flush Journal to Persistent Storage.
-         Starting Create Volatile Files and Directories...
-[[0;32m  OK  [0m] Started Create Volatile Files and Directories.
-         Starting Update UTMP about System Boot/Shutdown...
-[[0;32m  OK  [0m] Started ebtables ruleset management.
-[[0;32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
-[[0;32m  OK  [0m] Found device /dev/ttyS0.
-[[0;32m  OK  [0m] Listening on Load/Save RF Kill Switch Status /dev/rfkill Watch.
-[[0;32m  OK  [0m] Started AppArmor initialization.
-         Starting Initial cloud-init job (pre-networking)...
-         Starting Load AppArmor profiles managed internally by snapd...
-         Mounting Arbitrary Executable File Formats File System...
-[[0;32m  OK  [0m] Mounted Arbitrary Executable File Formats File System.
-[[0;32m  OK  [0m] Started Load AppArmor profiles managed internally by snapd.
-[ 2401.615162] cloud-init[557]: Cloud-init v. 23.1.2-0ubuntu0~18.04.1 running 'init-local' at Fri, 28 Jul 2023 14:04:01 +0000. Up 2401.40 seconds.
-[[0;32m  OK  [0m] Started Initial cloud-init job (pre-networking).
-[[0;32m  OK  [0m] Reached target Network (Pre).
-         Starting Network Service...
-[[0;32m  OK  [0m] Started Network Service.
-         Starting Network Name Resolution...
-         Starting Wait for Network to be Configured...
-[[0;32m  OK  [0m] Started Network Name Resolution.
-[[0;32m  OK  [0m] Reached target Host and Network Name Lookups.
-[[0;32m  OK  [0m] Reached target Network.
-[[0;32m  OK  [0m] Started Wait for Network to be Configured.
-         Starting Initial cloud-init job (metadata service crawler)...
-[ 2404.140022] cloud-init[737]: Cloud-init v. 23.1.2-0ubuntu0~18.04.1 running 'init' at Fri, 28 Jul 2023 14:04:03 +0000. Up 2403.96 seconds.
-[ 2404.148885] cloud-init[737]: ci-info: ++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
-[ 2404.172563] cloud-init[737]: ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
-[ 2404.182348] cloud-init[737]: ci-info: | Device |  Up  |           Address           |      Mask     | Scope  |     Hw-Address    |
-[ 2404.191796] cloud-init[737]: ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
-[ 2404.198227] cloud-init[737]: ci-info: | enp0s3 | True |          10.0.2.15          | 255.255.255.0 | global | 02:3b:7b:b7:3b:2d |
-[ 2404.206698] cloud-init[737]: ci-info: | enp0s3 | True |  fe80::3b:7bff:feb7:3b2d/64 |       .       |  link  | 02:3b:7b:b7:3b:2d |
-[ 2404.213013] cloud-init[737]: ci-info: | enp0s8 | True |         10.10.10.101        | 255.255.255.0 | global | 08:00:27:77:f6:d1 |
-[ 2404.226805] cloud-init[737]: ci-info: | enp0s8 | True | fe80::a00:27ff:fe77:f6d1/64 |       .       |  link  | 08:00:27:77:f6:d1 |
-[ 2404.234367] cloud-init[737]: ci-info: |   lo   | True |          127.0.0.1          |   255.0.0.0   |  host  |         .         |
-[ 2404.241318] cloud-init[737]: ci-info: |   lo   | True |           ::1/128           |       .       |  host  |         .         |
-[ 2404.248641] cloud-init[737]: ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
-[ 2404.259885] cloud-init[737]: ci-info: ++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++
-[ 2404.265900] cloud-init[737]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
-[ 2404.274599] cloud-init[737]: ci-info: | Route | Destination | Gateway  |     Genmask     | Interface | Flags |
-[ 2404.280836] cloud-init[737]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
-[ 2404.285868] cloud-init[737]: ci-info: |   0   |   0.0.0.0   | 10.0.2.2 |     0.0.0.0     |   enp0s3  |   UG  |
-[ 2404.291928] cloud-init[737]: ci-info: |   1   |   10.0.2.0  | 0.0.0.0  |  255.255.255.0  |   enp0s3  |   U   |
-[ 2404.298510] cloud-init[737]: ci-info: |   2   |   10.0.2.2  | 0.0.0.0  | 255.255.255.255 |   enp0s3  |   UH  |
-[ 2404.306359] cloud-init[737]: ci-info: |   3   |  10.10.10.0 | 0.0.0.0  |  255.255.255.0  |   enp0s8  |   U   |
-[ 2404.315118] cloud-init[737]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
-[ 2404.321487] cloud-init[737]: ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
-[ 2404.327402] cloud-init[737]: ci-info: +-------+-------------+---------+-----------+-------+
-[ 2404.331571] cloud-init[737]: ci-info: | Route | Destination | Gateway | Interface | Flags |
-[ 2404.335993] cloud-init[737]: ci-info: +-------+-------------+---------+-----------+-------+
-[ 2404.342775] cloud-init[737]: ci-info: |   1   |  fe80::/64  |    ::   |   enp0s8  |   U   |
-[ 2404.349810] cloud-init[737]: ci-info: |   2   |  fe80::/64  |    ::   |   enp0s3  |   U   |
-[ 2404.354034] cloud-init[737]: ci-info: |   4   |    local    |    ::   |   enp0s3  |   U   |
-[ 2404.359623] cloud-init[737]: ci-info: |   5   |    local    |    ::   |   enp0s8  |   U   |
-[ 2404.366002] cloud-init[737]: ci-info: |   6   |   ff00::/8  |    ::   |   enp0s8  |   U   |
-[ 2404.370425] cloud-init[737]: ci-info: |   7   |   ff00::/8  |    ::   |   enp0s3  |   U   |
-[ 2404.377909] cloud-init[737]: ci-info: +-------+-------------+---------+-----------+-------+
-[[0;32m  OK  [0m] Started Initial cloud-init job (metadata service crawler).
+[ 2         Stopping Authorization Manager...
+[[0;32m  OK  [0m] Stopped target Timers.
+[[0;32m  OK  [0m] Stopped Ubuntu Advantage Timer for running repeated jobs.
+[[0;32m  OK  [0m] Stopped Discard unused blocks once a week.
+[[0;32m  OK  [0m] Stopped target Graphical Interface.
+[[0;32m  OK  [0m] Stopped target Host and Network Name Lookups.
+[[0;32m  OK  [0m] Closed Load/Save RF Kill Switch Status /dev/rfkill Watch.
+         Stopping Session 7 of user vagrant.
+[[0;32m  OK  [0m] Stopped target Cloud-init target.
+         Unmounting /vagrant...
+[[0;32m  OK  [0m] Stopped Daily Cleanup of Temporary Directories.
+         Stopping User Manager for UID 1000...
+[[0;32m  OK  [0m] Stopped Execute cloud user/final scripts.
+[[0;32m  OK  [0m] Stopped target Multi-User System.
+         Stopping LXD - container startup/shutdown...
+         Stopping Dispatcher daemon for systemd-networkd...
+         Stopping irqbalance daemon...
+         Stopping         Stopping Serial Getty on ttyS0...
+         Stopping FUSE filesystem for LXC...
+[[0;32m  OK  [0m] Stopped Message of the Day.
+         Stopping Availability of block devices...
+         Stopping Regular background program processing daemon...
+         Stopping vboxadd-service.service...
+         Stopping Docker Application Container Engine...
+         Stopping Accounts Service...
+         Stopping System Logging Service...
+[[0;32m  OK  [0m] Stopped Apply the settings specified in cloud-config.
+[[0;32m  OK  [0m] Stopped Wait until snapd is fully seeded.
+[[0;32m  OK  [0m] Stopped target Cloud-config availability.
+         Stopping Deferred execution scheduler...
+         Stopping LSB: Record successful boot for GRUB...
+[[0;32m  OK  [0m] Stopped Daily apt upgrade and clean activities.
+[[0;32m  OK  [0m] Stopped Daily apt download activities.
+[[0;32m  OK  [0m] Stopped target System Time Synchronized.
+[[0;32m  OK  [0m] Unmounted /var/lib/lxcfs.
+[[0;32m  OK  [0m] Stopped Deferred execution scheduler.
+[[0;32m  OK  [0m] Stopped irqbalance daemon.
+[[0;32m  OK  [0m] Stopped Accounts Service.
+[[0;32m  OK  [0m] Stopped Regular background program processing daemon.
+[[0;32m  OK  [0m] Stopped Dispatcher daemon for systemd-networkd.
+[[0;32m  OK  [0m] Stopped Authorization Manager.
+[[0;32m  OK  [0m] Stopped Serial Getty on ttyS0.
+[[0;32m  OK  [0m] Stopped Getty on tty1.
+[[0;32m  OK  [0m] Stopped System Logging Service.
+[[0;32m  OK  [0m] Stopped OpenBSD Secure Shell server.
+[[0;32m  OK  [0m] Stopped User Manager for UID 1000.
+[[0;32m  OK  [0m] Unmounted /vagrant.
+[[0;32m  OK  [0m] Stopped D-Bus System Message Bus.
+[[0;32m  OK  [0m] Stopped Availability of block devices.
+[[0;32m  OK  [0m] Stopped vboxadd-service.service.
+[[0;32m  OK  [0m] Stopped FUSE filesystem for LXC.
+[[0;32m  OK  [0m] Stopped Session 7 of user vagrant.
+         Stopping vboxadd.service...
+[[0;32m  OK  [0m] Stopped target Remote File Systems (Pre).
+[[0;32m  OK  [0m] Removed slice User Slice of vagrant.
+         Stopping Login Service...
+[[0;32m  OK  [0m] Removed slice system-getty.slice.
+[[0;32m  OK  [0m] Stopped target Login Prompts (Pre).
+         Stopping Permit User Sessions...
+[[0;32m  OK  [0m] Removed slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Stopped LXD - container startup/shutdown.
+[[0;32m  OK  [0m] Stopped LSB: automatic crash report generation.
+[[0;32m  OK  [0m] Stopped LSB: Record successful boot for GRUB.
+[[0;32m  OK  [0m] Stopped Permit User Sessions.
+[[0;32m  OK  [0m] Stopped Login Service.
+[[0;32m  OK  [0m] Stopped target User and Group Name Lookups.
+[[0;32m  OK  [0m] Unmounted /run/docker/netns/1-vphecc89dy.
+[[0;32m  OK  [0m] Unmounted /run/docker/netns/ingress_sbox.
+[[0;32m  OK  [0m] Stopped Docker Application Container Engine.
+         Stopping containerd container runtime...
+[[0;32m  OK  [0m] Stopped target Network is Online.
+[[0;32m  OK  [0m] Stopped containerd container runtime.
+[[0;32m  OK  [0m] Stopped target Network.
+         Stopping Network Name Resolution...
+[[0;32m  OK  [0m] Stopped Network Name Resolution.
+         Stopping Network Service...
+[[0;32m  OK  [0m] Stopped Network Service.
+[[0;32m  OK  [0m] Stopped target Network (Pre).
+[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A stop job is running for vboxadd.service (6s / 5min)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A stop job is running for vboxadd.service (7s / 5min)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A stop job is running for vboxadd.service (7s / 5min)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A stop job is running for vboxadd.service (8s / 5min)[K[    [0;31m*[0;1;31m*[0m] A stop job is running for vboxadd.service (8s / 5min)[K[     [0;31m*[0m] A stop job is running for vboxadd.service (9s / 5min)[K[    [0;31m*[0;1;31m*[0m] A stop job is running for vboxadd.service (9s / 5min)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A stop job is running for vboxadd.service (10s / 5min)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A stop job is running for vboxadd.service (11s / 5min)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A stop job is running for vboxadd.service (11s / 5min)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A stop job is running for vboxadd.service (12s / 5min)[K[[0;1;31m*[0m[0;31m*    [0m] A stop job is running for vboxadd.service (12s / 5min)[K[[0m[0;31m*     [0m] A stop job is running for vboxadd.service (13s / 5min)[K[[0;1;31m*[0m[0;31m*    [0m] A stop job is running for vboxadd.service (13s / 5min)[K[[0;31m*[0;1;31m*[0m[0;31m*   [0m] A stop job is running for vboxadd.service (14s / 5min)[K[ [0;31m*[0;1;31m*[0m[0;31m*  [0m] A stop job is running for vboxadd.service (14s / 5min)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A stop job is running for vboxadd.service (15s / 5min)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A stop job is running for vboxadd.service (15s / 5min)[K[    [0;31m*[0;1;31m*[0m] A stop job is running for vboxadd.service (16s / 5min)[K[     [0;31m*[0m] A stop job is running for vboxadd.service (16s / 5min)[K[    [0;31m*[0;1;31m*[0m] A stop job is running for vboxadd.service (17s / 5min)[K[   [0;31m*[0;1;31m*[0m[0;31m*[0m] A stop job is running for vboxadd.service (18s / 5min)[K[  [0;31m*[0;1;31m*[0m[0;31m* [0m] A stop job is running for vboxadd.service (18s / 5min)[K[[0;32m  OK  [0m] Stopped vboxadd.service.
+[[0;32m  OK  [0m] Stopped target Basic System.
+[[0;32m  OK  [0m] Stopped target Sockets.
+[[0;32m  OK  [0m] Closed ACPID Listen Socket.
+[[0;32m  OK  [0m] Closed Socket activation for snappy daemon.
+[[0;32m  OK [[0;32m  OK  [0m] Closed Load/Save RF Kill Switch Status /dev/rfkill Watch.
+[[0;32m  OK  [0m] Stopped target Host and Network Name Lookups.
+         Stopping Session 5 of user vagrant.
+[[0;32m  OK  [0m] Stopped target Cloud-init target.
+[[0;32m  OK  [0m] Stopped Execute cloud user/final scripts.
+[[0;32m  OK  [0m] Stopped Apply the settings specified in cloud-config.
+[[0;32m  OK  [0m] Stopped target Cloud-config availability.
+         Stopping User Manager for UID 1000...
+         Stopping Availability of block devices...
+         Stopping Authorization Manager...
+[[0;32m  OK  [0m] Stopped target Remote File Systems (Pre).
+[[0;32m  OK  [0m] Stopped target Timers.
+[[0;32m  OK  [0m] Stopped Ubuntu Advantage Timer for running repeated jobs.
+[[0;32m  OK  [0m] Stopped Discard unused blocks once a week.
+[[0;32m  OK  [0m] Stopped Message of the Day.
+[[0;32m  OK  [0m] Stopped Daily Cleanup of Temporary Directories.
+[[0;32m  OK  [0m] Stopped target Graphical Interface.
+         Stopping Accounts Service...
+[[0;32m  OK  [0m] Stopped target Multi-User System.
+         Stopping Docker Application Container Engine...
+         Stopping irqbalance daemon...
+[[0;32m  OK  [0m] Stopped target Login Prompts.
+         Stopping Getty on tty1...
+         Stopping Serial Getty on ttyS0...
+         Stopping System Logging Service...
+         Stopping FUSE filesystem for LXC...
+         Stopping Regular background program processing daemon...
+         Stopping Zabbix Agent 2...
+         Stopping Dispatcher daemon for systemd-networkd...
+         Stopping D-Bus System Message Bus...
+         Stopping LXD - container startup/shutdown...
+         Stopping OpenBSD Secure Shell server...
+[[0;32m  OK  [0m] Stopped Wait until snapd is fully seeded.
+         Stopping Deferred execution scheduler...
+         Stopping LSB: automatic crash report generation...
+         Stopping LSB: Record successful boot for GRUB...
+         Stopping vboxadd-service.service...
+[[0;32m  OK  [0m] Stopped Daily apt upgrade and clean activities.
+[[0;32m  OK  [0m] Stopped Daily apt download activities.
+[[0;32m  OK  [0m] Stopped target System Time Synchronized.
+[[0;32m  OK  [0m] Unmounted /var/lib/lxcfs.
+[[0;32m  OK  [0m] Stopped Deferred execution scheduler.
+[[0;32m  OK  [0m] Stopped irqbalance daemon.
+[[0;32m  OK  [0m] Stopped Regular background program processing daemon.
+[[0;32m  OK  [0m] Stopped Accounts Service.
+[[0;32m  OK  [0m] Stopped Dispatcher daemon for systemd-networkd.
+[[0;32m  OK  [0m] Stopped OpenBSD Secure Shell server.
+[[0;32m  OK  [0m] Stopped Serial Getty on ttyS0.
+[[0;32m  OK  [0m] Stopped Getty on tty1.
+[[0;32m  OK  [0m] Stopped System Logging Service.
+[[0;32m  OK  [0m] Stopped Authorization Manager.
+[[0;32m  OK  [0m] Stopped User Manager for UID 1000.
+[[0;32m  OK  [0m] Stopped Zabbix Agent 2.
+[[0;32m  OK  [0m] Stopped D-Bus System Message Bus.
+[[0;32m  OK  [0m] Stopped FUSE filesystem for LXC.
+[[0;32m  OK  [0m] Stopped Session 5 of user vagrant.
+[[0;32m  OK  [0m] Stopped LXD - container startup/shutdown.
+[[0;32m  OK  [0m] Stopped Availability of block devices.
+[[0;32m  OK  [0m] Removed slice User Slice of vagrant.
+         Stopping Login Service...
+[[0;32m  OK  [0m] Removed slice system-getty.slice.
+         Stopping Permit User Sessions...
+[[0;32m  OK  [0m] Stopped target Login Prompts (Pre).
+[[0;32m  OK  [0m] Removed slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Stopped LSB: Record successful boot for GRUB.
+[[0;32m  OK  [0m] Stopped LSB: automatic crash report generation.
+[[0;32m  OK  [0m] Stopped Permit User Sessions.
+[[0;32m  OK  [0m] Stopped vboxadd-service.service.
+         Stopping vboxadd.service...
+[[0;32m  OK  [0m] Unmounted /run/docker/netns/1-vphecc89dy.
+[[0;32m  OK  [0m] Stopped Login Service.
+[[0;32m  OK  [0m] Stopped target User and Group Name Lookups.
+[[0;32m  OK  [0m] Unmounted /run/docker/netns/ingress_sbox.
+[[0;32m  OK  [0m] Stopped Docker Application Container Engine.
+         Stopping containerd container runtime...
+[[0;32m  OK  [0m] Stopped target Network is Online.
+[[0;32m  OK  [0m] Stopped containerd container runtime.
+[[0;32m  OK  [0m] Stopped target Network.
+         Stopping Network Name Resolution...
+[[0;32m  OK  [0m] Stopped Network Name Resolution.
+[[0;32m  OK  [0m] Stopped vboxadd.service.
+[[0;32m  OK  [0m] Stopped target Basic System.
+[[0;32m  OK  [0m] Stopped target Sockets.
+[[0;32m  OK  [0m] Closed cloud-init hotplug hook socket.
+[[0;32m  OK  [0m] Closed Open-iSCSI iscsid Socket.
+[[0;32m  OK  [0m] Closed Docker Socket for the API.
+[[0;32m  OK  [0m] Closed Syslog Socket.
+[[0;32m  OK  [0m] Closed Socket activation for snappy daemon.
+[[0;32m  OK  [0m] Closed LXD - unix socket.
+[[0;32m  OK  [0m] Closed UUID daemon activation socket.
+[[0;32m  OK  [0m] Closed D-Bus System Message Bus Socket.
+[[0;32m  OK  [0m] Closed ACPID Listen Socket.
+[[0;32m  OK  [0m] Stopped target Paths.
+[[0;32m  OK  [0m] Stopped ACPI Events Check.
+[[0;32m  OK  [0m] Stopped target System Initialization.
+[[0;32m  OK  [0m] Stopped Initial cloud-init job (metadata service crawler).
+[[0;32m  OK  [0m] Stopped Wait for Network to be Configured.
+         Stopping Network Service...
+         Stopping Update UTMP about System Boot/Shutdown...
+[[0;32m  OK  [0m] Stopped target Local Encrypted Volumes.
+[[0;32m  OK  [0m] Stopped Dispatch Password Requests to Console Directory Watch.
+[[0;32m  OK  [0m] Stopped Forward Password Requests to Wall Directory Watch.
+         Stopping Load/Save Random Seed...
+[[0;32m  OK  [0m] Stopped target Slices.
+[[0;32m  OK  [0m] Removed slice User and Session Slice.
+[[0;32m  OK  [0m] Stopped Update UTMP about System Boot/Shutdown.
+[[0;32m  OK  [0m] Stopped Create Volatile Files and Directories.
+[[0;32m  OK  [0m] Stopped target Local File Systems.
+         Unmounting /run/user/1000...
+[[0;32m  OK  [0m] Stopped target Mounted snaps.
+[[0;32m  OK  [0m] Stopped target Mounting snaps.
+[[0;32m  OK  [0m] Stopped Load/Save Random Seed.
+[[0;32m  OK  [0m] Unmounted /run/user/1000.
+[[0;32m  OK  [0m] Reached target Unmount All Filesystems.
+[[0;32m  OK  [0m] Stopped target Swap.
+[[0;32m  OK  [0m] Stopped target Local File Systems (Pre).
+         Stopping Monitoring of LVM2 mirrors…ng dmeventd or progress polling...
+[[0;32m  OK  [0m] Stopped Create Static Device Nodes in /dev.
+[[0;32m  OK  [0m] Stopped Network Service.
+[[0;32m  OK  [0m] Stopped Apply Kernel Variables.
+[[0;32m  OK  [0m] Stopped Load Kernel Modules.
+[[0;32m  OK  [0m] Stopped target Network (Pre).
+[[0;32m  OK  [0m] Stopped Initial cloud-init job (pre-networking).
+[[0;32m  OK  [0m] Stopped Remount Root and Kernel File Systems.
+[[0;32m  OK  [0m] Reached target Shutdown.
+[[0;32m  OK  [0m] Reached target Final Step.
+         Starting Power-Off...
+[[0;32m  OK  [0m] Stopped Monitoring of LVM2 mirrors,…sing dmeventd or progress polling.
+         Stopping LVM2 metadata daemon...
+[[0;32m  OK  [0m] Stopped LVM2 metadata daemon.
+[12587.510784] reboot: Power down
+ervice crawler).
 [[0;32m  OK  [0m] Reached target Cloud-config availability.
 [[0;32m  OK  [0m] Reached target System Initialization.
 [[0;32m  OK  [0m] Started Discard unused blocks once a week.
@@ -940,3 +949,128 @@ Ubuntu 18.04.6 LTS node01 ttyS0
 
 node01 login: [ 2435.841213] cloud-init[9389]: Cloud-init v. 23.1.2-0ubuntu0~18.04.1 running 'modules:final' at Fri, 28 Jul 2023 14:04:35 +0000. Up 2435.69 seconds.
 [ 2435.841385] cloud-init[9389]: Cloud-init v. 23.1.2-0ubuntu0~18.04.1 finished at Fri, 28 Jul 2023 14:04:35 +0000. Datasource DataSourceNoCloud [seed=/dev/sdb][dsmode=net].  Up 2435.83 seconds
+         Stopping Session 5 of user vagrant.
+[[0;32m  OK  [0m] Stopped target Cloud-init target.
+[[0;32m  OK  [0m] Stopped Execute cloud user/final scripts.
+         Stopping User Manager for UID 1000...
+         Stopping Authorization Manager...
+[[0;32m  OK  [0m] Stopped target Timers.
+[[0;32m  OK  [0m] Stopped Discard unused blocks once a week.
+[[0;32m  OK  [0m] Stopped Daily Cleanup of Temporary Directories.
+[[0;32m  OK  [0m] Stopped Daily apt upgrade and clean activities.
+[[0;32m  OK  [0m] Stopped Message of the Day.
+[[0;32m  OK  [0m] Stopped target Graphical Interface.
+[[0;32m  OK  [0m] Stopped target Multi-User System.
+         Stopping LXD - container startup/shutdown...
+         Stopping Docker Application Container Engine...
+         Stopping FUSE filesystem for LXC...
+         Stopping OpenBSD Secure Shell server...
+[[0;32m  OK  [0m] Stopped target Host and Network Name Lookups.
+         Stopping Dispatcher daemon for systemd-networkd...
+         Stopping Accounts Service...
+[[0;32m  OK  [0m] Stopped Daily apt download activities.
+[[0;32m  OK  [0m] Closed Load/Save RF Kill Switch Status /dev/rfkill Watch.
+[[0;32m  OK  [0m] Stopped target System Time Synchronized.
+         Stopping LSB: Record successful boot for GRUB...
+         Stopping irqbalance daemon...
+         Stopping Availability of block devices...
+[[0;32m  OK  [0m] Stopped Ubuntu Advantage Timer for running repeated jobs.
+         Stopping vboxadd-service.service...
+         Stopping Regular background program processing daemon...
+[[0;32m  OK  [0m] Stopped Apply the settings specified in cloud-config.
+[[0;32m  OK  [0m] Stopped Wait until snapd is fully seeded.
+[[0;32m  OK  [0m] Stopped target Cloud-config availability.
+         Stopping Serial Getty on ttyS0...
+         Stopping Getty on tty1...
+         Stopping Deferred execution scheduler...
+         Stopping D-Bus System Message Bus...
+[[0;32m  OK  [0m] Unmounted /var/lib/lxcfs.
+[[0;32m  OK  [0m] Stopped Dispatcher daemon for systemd-networkd.
+[[0;32m  OK  [0m] Stopped System Logging Service.
+[[0;32m  OK  [0m] Stopped Regular background program processing daemon.
+[[0;32m  OK  [0m] Stopped Deferred execution scheduler.
+[[0;32m  OK  [0m] Stopped Accounts Service.
+[[0;32m  OK  [0m] Stopped irqbalance daemon.
+[[0;32m  OK  [0m] Stopped OpenBSD Secure Shell server.
+[[0;32m  OK  [0m] Stopped Serial Getty on ttyS0.
+[[0;32m  OK  [0m] Stopped Getty on tty1.
+[[0;32m  OK  [0m] Stopped Authorization Manager.
+[[0;32m  OK  [0m] Stopped User Manager for UID 1000.
+[[0;32m  OK  [0m] Stopped vboxadd-service.service.
+[[0;32m  OK  [0m] Stopped D-Bus System Message Bus.
+[[0;32m  OK  [0m] Stopped FUSE filesystem for LXC.
+[[0;32m  OK  [0m] Stopped Session 5 of user vagrant.
+         Stopping vboxadd.service...
+[[0;32m  OK  [0m] Removed slice User Slice of vagrant.
+         Stopping Login Service...
+[[0;32m  OK  [0m] Removed slice system-getty.slice.
+[[0;32m  OK  [0m] Stopped target Login Prompts (Pre).
+[[0;32m  OK  [0m] Removed slice system-serial\x2dgetty.slice.
+         Stopping Permit User Sessions...
+[[0;32m  OK  [0m] Stopped LXD - container startup/shutdown.
+[[0;32m  OK  [0m] Stopped Availability of block devices.
+[[0;32m  OK  [0m] Stopped LSB: Record successful boot for GRUB.
+[[0;32m  OK  [0m] Stopped Permit User Sessions.
+[[0;32m  OK  [0m] Stopped LSB: automatic crash report generation.
+[[0;32m  OK  [0m] Stopped Login Service.
+[[0;32m  OK  [0m] Stopped target User and Group Name Lookups.
+[[0;32m  OK  [0m] Stopped vboxadd.service.
+[[0;32m  OK  [0m] Unmounted /run/docker/netns/1-vphecc89dy.
+[[0;32m  OK  [0m] Unmounted /run/docker/netns/ingress_sbox.
+[[0;32m  OK  [0m] Stopped Docker Application Container Engine.
+         Stopping containerd container runtime...
+[[0;32m  OK  [0m] Stopped target Network is Online.
+[[0;32m  OK  [0m] Stopped containerd container runtime.
+[[0;32m  OK  [0m] Stopped target Network.
+         Stopping Network Name Resolution...
+[[0;32m  OK  [0m] Stopped target Basic System.
+[[0;32m  OK  [0m] Stopped target Paths.
+[[0;32m  OK  [0m] Stopped ACPI Events Check.
+[[0;32m  OK  [0m] Stopped target Slices.
+[[0;32m  OK  [0m] Removed slice User and Session Slice.
+[[0;32m  OK  [0m] Stopped target Sockets.
+[[0;32m  OK  [0m] Closed D-Bus System Message Bus Socket.
+[[0;32m  OK  [0m] Closed Socket activation for snappy daemon.
+[[0;32m  OK  [0m] Closed Syslog Socket.
+[[0;32m  OK  [0m] Closed ACPID Listen Socket.
+[[0;32m  OK  [0m] Closed Open-iSCSI iscsid Socket.
+[[0;32m  OK  [0m] Closed UUID daemon activation socket.
+[[0;32m  OK  [0m] Closed Docker Socket for the API.
+[[0;32m  OK  [0m] Closed LXD - unix socket.
+[[0;32m  OK  [0m] Closed cloud-init hotplug hook socket.
+[[0;32m  OK  [0m] Stopped target System Initialization.
+[[0;32m  OK  [0m] Stopped target Local Encrypted Volumes.
+[[0;32m  OK  [0m] Stopped Forward Password Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Stopped Dispatch Password Requests to Console Directory Watch.
+         Stopping Update UTMP about System Boot/Shutdown...
+[[0;32m  OK  [0m] Stopped Initial cloud-init job (metadata service crawler).
+[[0;32m  OK  [0m] Stopped Wait for Network to be Configured.
+         Stopping Load/Save Random Seed...
+[[0;32m  OK  [0m] Stopped Network Name Resolution.
+[[0;32m  OK  [0m] Stopped Load/Save Random Seed.
+         Stopping Network Service...
+[[0;32m  OK  [0m] Stopped Update UTMP about System Boot/Shutdown.
+[[0;32m  OK  [0m] Stopped Create Volatile Files and Directories.
+[[0;32m  OK  [0m] Stopped target Local File Systems.
+[[0;32m  OK  [0m] Stopped target Mounted snaps.
+[[0;32m  OK  [0m] Stopped target Mounting snaps.
+         Unmounting /run/user/1000...
+[[0;32m  OK  [0m] Unmounted /run/user/1000.
+[[0;32m  OK  [0m] Reached target Unmount All Filesystems.
+[[0;32m  OK  [0m] Stopped target Swap.
+[[0;32m  OK  [0m] Stopped target Local File Systems (Pre).
+         Stopping Monitoring of LVM2 mirrors…ng dmeventd or progress polling...
+[[0;32m  OK  [0m] Stopped Create Static Device Nodes in /dev.
+[[0;32m  OK  [0m] Stopped Monitoring of LVM2 mirrors,…sing dmeventd or progress polling.
+         Stopping LVM2 metadata daemon...
+[[0;32m  OK  [0m] Stopped LVM2 metadata daemon.
+[[0;32m  OK  [0m] Stopped Network Service.
+[[0;32m  OK  [0m] Stopped target Network (Pre).
+[[0;32m  OK  [0m] Stopped Initial cloud-init job (pre-networking).
+[[0;32m  OK  [0m] Stopped Remount Root and Kernel File Systems.
+[[0;32m  OK  [0m] Stopped Apply Kernel Variables.
+[[0;32m  OK  [0m] Stopped Load Kernel Modules.
+[[0;32m  OK  [0m] Reached target Shutdown.
+[[0;32m  OK  [0m] Reached target Final Step.
+         Starting Power-Off...
+[14413.705930] reboot: Power down
