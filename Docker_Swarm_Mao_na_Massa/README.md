@@ -1,11 +1,7 @@
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/51617258-6a90-441b-9e68-249189479a74/image1.png
-
 > O que é e para que serve?
 > 
 - Um processo executado no sistema operacional, porém isolado de todos os outros processos (cpu, memória, rede, disco, etc).
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c390e3bd-c593-4763-8975-0be60a70121e/image2.png
-    
+
 - Este isolamento permite também a separação das dependências da aplicação (versão do Java, libs de S.O, etc).
 - Manutenção de muitas apps em um mesmo host dificulta a operação
 
@@ -23,9 +19,7 @@
 
 - **Baixo consumo de hardware**: utilização do hardware mais otimizada comparado com VM.
 - **Portabilidade**: A frase “funciona na minha máquina” deixa de ser justificativa para problemas em ambientes produtivos. O mesmo container pode ser utilizado desde a máquina do Dev até PROD.
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c390e3bd-c593-4763-8975-0be60a70121e/image2.png
-    
+
 - **Reusabilidade**: É possível utilizar o mesmo container para diversos ambientes.
 - **Microserviços**: Aderente a arquitetura de microserviços.
 
@@ -33,8 +27,6 @@
 
 - **Images**: Pacote com um sistema de arquivos com todas as suas dependências (libs de S.O, processos que serão executados, kernel, etc)
 - **Container:** é um processo que executa uma imagem. A imagem é imutável mesmo após um container ser iniciado.
-
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5d3240b3-5f22-465a-a168-d7463dc56440/image5.jpg
 
 
 
@@ -47,9 +39,7 @@
 # conceitos básicos
 
 - **Dockerfile**: Arquivo texto simples com formato de script Dockerfile utilizado para criar uma imagem docker.
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cc78bdda-fd10-47d3-aa75-0a06e51c38ff/image6.jpg
-    
+
 - **docker build**: Comando executado para criar uma imagem de container. Necessário criar um DockerFile. ◦ **docker build -t getting-started .**
 - **docker run:** Comando executado para iniciar um container.
 
@@ -89,10 +79,9 @@
 Docker MariaDB:
 
 > ◦ docker run --net devops --name mariadb -v /root/docker/mariadb/datadir:/var/lib/mysql -e
-> 
-> 
-> !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bc619328-8ca0-483b-b5df-3e3c4a79468d/image10.png
-> 
+>
+>
+>
 - mysql –uroot -pdevopsmaonamassa
 - show databases;
 - use notes;
@@ -136,12 +125,9 @@ Docker – Comandos de administração
 > ◦ docker build -t devops/notes-docker .
 > 
 - Iniciar o container:
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/442fee32-4cf9-426e-8547-af962c1650a3/image11.png
-    
 
 > ◦ docker run --network devops --hostname app -p 8080:8080 -d devops/notes-docker
-> 
+>
 
 # – mão na massa: App Java
 
@@ -160,9 +146,7 @@ Docker – Comandos de administração
 - Se encaixa no modelo de IaC – versionamento da infraestrutura
 - Automação no processo de testes (Continuos Integration)
 - **docker-compose up –d** (subida do ambiente)
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2722f740-5e7b-4a96-b73c-68bd61507632/image12.png
-    
+
 - **./run_tests** (execução dos testes) **docker-compose down** (shutdown do ambiente)
 - Ciclo de vida:
 - Start, stop rebuild dos serviços
@@ -176,18 +160,14 @@ Docker – Comandos de administração
 - Mudar permissão para execução: **sudo chmod +x /usr/local/bin/docker-compose**
 - Criar link simbólico (execução de qualquer diretório): **sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose** Validar instalação: **docker-compose --version**
 
-> 
-> 
-
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c4ac971a-ec65-4488-9cd1-44109ef3de32/image13.png
+>
+>
 
 # Docker Swarm - Conceitos
 
 - Prover alta disponibilidade
 - Orquestração de Containers
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a11dbeb4-8da9-4b7a-a7e9-3c698a5f854c/image14.png
-    
+
 - Cluster nativo (built in Docker)
 - Simples, fácil instalação
 - Limitado comparado com outros produtos (K8s, OpenShift, etc).
@@ -200,9 +180,7 @@ Docker – Comandos de administração
 - **Worker Node**: Recebe e executa tarefas disparadas pelo manager. Manager node também é um worker node (default).
 - **Service**: definição de tarefas para serem executadas no manager ou worker nodes.
 - **Task**: processo executado dentro do container.
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a11dbeb4-8da9-4b7a-a7e9-3c698a5f854c/image14.png
-    
+
 - **Load Balancer**: Expor services disponíveis para o “mundo externo”
 
 # Mão na massa
@@ -252,7 +230,5 @@ worker2.vm.network "private_network", ip: "192.168.1.4" end end
 - Listar detalhes do service: **docker service ps demo**
 - Escalar o serviço: **docker service scale demo=3**
 - Visualizar o serviço distribuído pelo cluster: **docker service ps demo**
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a11dbeb4-8da9-4b7a-a7e9-3c698a5f854c/image14.png
-    
+
 - Abrir página do Nginx (na máquina fisica): **http://localhost:8090**
