@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby  :
+
+machines = {
+  "svltbanco" => {"memory" => "2048", "cpu" => "2", "ip" => "110", "image" => "bento/oracle-8"},
+  "svltzabbix" => {"memory" => "2048", "cpu" => "2", "ip" => "111", "image" => "bento/oracle-8"}
+}
+
+Vagrant.configure("2") do |config|
+
+  machines.each do |name, conf|
+    config.vm.define "#{name}" do |machine|
+      machine.vm.box = "#{conf["image"]}"
+      machine.vm.hostname = "#{name}.fkztec.net"
+      machine.vm.network "private_network", ip: "10.10.10.#{conf["ip"]}"
+      machine.vm.provider "virtualbox" do |vb|
+        vb.name = "#{name}"
+        vb.memory = conf["memory"]
+        vb.cpus = conf["cpu"]
+        vb.customize ["modifyvm", :id, "--groups", "/Zabbix-Lab"]
+      end 
+# Instalação do Banco
+      if "#{name}" == "svltbanco"
+        machine.vm.provision "shell", path: "Install_mysql8.sh"
+      end
+# Instalação do Zabbix
+      if "#{name}" == "svltzabbix"
+        machine.vm.provision "shell", path: "zabbix_6.sh"
+      end
+    end
+  end
+end
