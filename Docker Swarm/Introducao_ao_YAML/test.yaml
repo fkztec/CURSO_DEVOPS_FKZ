@@ -1,0 +1,46 @@
+# Instrução para o progama.
+nome: "Diogo"
+idade: 30 # Essa é a idade do Usuario.
+
+# Este objeto descreve o nosso projeto.
+objeto:
+  versao: 2
+  arquivo: "teste.txt"
+
+# Forma de numero fracionarios.
+versao: 2
+versao_completa: 3.14
+
+# String sem aspas
+string_sem_aspas: Digite um texto aqui
+texto: "Este texto é um texto valido para o yaml"
+
+# Valor Nulo
+nulo: ~
+nulo_dois: null
+
+# Validando valores verdadeiro ou Falso
+verdadeiro: True
+verdadeiro_dois: On
+
+falso: False
+false_dois: Off
+
+# Validando Arrays (Lista)
+lista: [1,2,3,4,5]
+
+lista_dois: 
+  - "teste.txt"
+  - 10
+  - outro teste
+  - True
+
+# Validando Dicionário (Lista)
+
+obj: {a: 1, b: 2, c: 3, objeto_interno: {a: 1}}
+
+objet:
+  a: 1
+  b: 2
+  objeto_interno:
+    x: 2
